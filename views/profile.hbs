@@ -1,0 +1,45 @@
+<h2>user : {{user}}</h2>
+{{#if result}}
+{{result}}
+{{/if }}
+{{#if user}}
+
+{{> newMsgForm}}
+
+
+<hr>
+<ul class="list-group">
+  {{#each messages}}
+  <li class="list-group-item">
+    <div class="container">
+      <div class="row">
+        {{this._id}}
+        <div class="col-sm">
+          <img src="{{this.picture}}" alt="picture" width="100">
+          {{this.picture}}
+        </div>
+        <div class="col-sm">
+          <div class="mb-20">
+            <strong>{{this.author.name}}</strong>
+          </div>
+          {{this.text}}
+          <div class="mb-20">
+            <a href="/user/delete/{{this._id}}">
+              <button type="button" class="btn btn-danger">Delete</button></a>
+          </div>
+          <div class="mb-20">
+            <a href="/user/edit/{{this._id}}">
+              <button type="button" class="btn btn-success">Edit</button></a>
+          </div>
+          <div class="mb-20">
+            <strong>{{this.likesCount}}</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </li>
+  {{/each}}
+</ul>
+
+{{/if}}

@@ -1,0 +1,10 @@
+body {
+  background-color: coral;
+}
+
+.myLi {
+  margin: 20px;
+  border-radius: 20px;
+  background-color: lightcoral;
+  border: 3px solid white;
+}

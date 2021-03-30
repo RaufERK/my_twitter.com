@@ -1,0 +1,35 @@
+{{#if user}}
+{{> newMsgForm}}
+{{/if}}
+
+<hr>
+<h3>Messages</h3>
+<ul class="list-group">
+  {{#each messages}}
+  <li class="list-group-item">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm">
+          <img src="{{this.picture}}" alt="picture" width="100">
+          {{this.picture}}
+        </div>
+        <div class="col-sm">
+          <div class="mb-20">
+            <strong>{{this.author.name}}</strong>
+          </div>
+          {{this.text}}
+          <div class="mb-20">
+            <a href="/addlike/{{this._id}}"> <img
+                src="https://emojis.slackmojis.com/emojis/images/1588108661/8786/fb-heart.png?1588108661" alt="like"
+                width="30"></a>
+          </div>
+          <div class="mb-20">
+            <strong>{{this.likesCount}}</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </li>
+  {{/each}}
+</ul>
